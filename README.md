@@ -1,5 +1,15 @@
 <center> <h1>HBNB - The Console</h1> </center>
 
+![**Group** Badge](https://img.shields.io/badge/Group_project-CC5500)
+![**Python** Badge](https://img.shields.io/badge/Python-CC5500)
+![**OPP** Badge](https://img.shields.io/badge/OOP-CC5500)
+![**Back--end** Badge](https://img.shields.io/badge/Back--end-CC5500)
+![**SQL** Badge](https://img.shields.io/badge/SQL-CC5500)
+![**MySQL** Badge](https://img.shields.io/badge/MySQL-CC5500)
+![**ORM** Badge](https://img.shields.io/badge/ORM-CC5500)
+![**SQLAlchemy** Badge](https://img.shields.io/badge/SQLAlchemy-CC5500)
+
+
 This repository contains the initial stage of a student project to build a clone of the AirBnB website. This stage implements a backend interface, or console, to manage program data. Console commands allow the user to create, update, and destroy objects, as well as manage file storage. Using a system of JSON serialization/deserialization, storage is persistent between sessions.
 
 ---
