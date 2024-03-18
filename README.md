@@ -1,4 +1,4 @@
-<center> <h1>HBNB - The Console</h1> </center>
+<center> <h1>AirBnB clone - MySQL</h1> </center>
 
 ![**Group** Badge](https://img.shields.io/badge/Group_project-CC5500)
 ![**Python** Badge](https://img.shields.io/badge/Python-CC5500)
