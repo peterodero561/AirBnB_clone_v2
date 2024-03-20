@@ -8,7 +8,11 @@ class FileStorage:
         if cls is None:
             return FileStorage.__objects
         else:
-            return {key: obj for key, obj in FileStorage.__objects.items() if isinstance(obj, cls)}
+            return {
+                key: obj
+                for key, obj in FileStorage.__objects.items()
+                if isinstance(obj, cls)
+            }
 
     def new(self, obj):
         """Adds new object to storage dictionary"""
@@ -18,7 +22,10 @@ class FileStorage:
     def save(self):
         """Saves storage dictionary to file"""
         with open(FileStorage.__file_path, 'w') as f:
-            temp = {key: obj.to_dict() for key, obj in FileStorage.__objects.items()}
+            temp = {
+                key: obj.to_dict()
+                for key, obj in FileStorage.__objects.items()
+            }
             json.dump(temp, f)
 
     def reload(self):
@@ -50,6 +57,6 @@ class FileStorage:
 
     def delete(self, obj=None):
         """Delete obj from __objects if it's inside"""
-        if obj is not None and obj.__class__.__name__ + '.' + obj.id in self.__objects:
+        if obj is not None and obj.__class__.__name__ + '.' + \
+                obj.id in self.__objects:
             del self.__objects[obj.__class__.__name__ + '.' + obj.id]
-
