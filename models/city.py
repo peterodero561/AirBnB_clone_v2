@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """ holds class City"""
-import models
 from models.base_model import BaseModel, Base
 from os import getenv
+import models
 import sqlalchemy
 from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
@@ -26,5 +26,5 @@ class City(BaseModel, Base):
         state_id = ""
 
     def __init__(self, *args, **kwargs):
-        """initializes city"""
+        """initializes cities"""
         super().__init__(*args, **kwargs)
