@@ -34,7 +34,8 @@ class BaseModel:
         for key, value in kwargs.items():
             if key == '__class__':
                 continue
-            setattr(self, key, value)
+            if not hasattr(self, key):
+                setattr(self, key, value)
             if type(self.created_at) is str:
                 self.created_at = datetime.strptime(self.created_at, time_fmt)
             if type(self.updated_at) is str:
