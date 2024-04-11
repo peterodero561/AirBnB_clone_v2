@@ -17,9 +17,18 @@ ln -sf /data/web_static/releases/test /data/web_static/current/
 sudo chown -R ubuntu:ubuntu /data/
 
 # updata nginx conf
-location /hbnb_static {
-  alias /data/web_static/current/;
+sudo tee /etc/nginx/sites-available/web_static <<EOF
+server {
+  listen 80;
+  server_name _;
+  location /hbnb_static {
+    alias /data/web_static/current/;
+  }
 }
+EOF
+
+# Create symbolic link to enable the site
+sudo ln -sf /etc/nginx/sites-available/web_static /etc/nginx/sites-enabled/
 
 # update
 sudo systemctl restart nginx
