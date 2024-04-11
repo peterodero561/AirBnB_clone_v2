@@ -6,11 +6,16 @@ sudo apt-get update
 sudo apt-get install -y nginx
 
 # create the folders
-mkdir -p /data/web_static/releases/test/
+sudo mkdir -p /data/web_static/releases/test/
+sudo mkdir -p /data/web_static/current/
 echo "Holberton School" > /data/web_static/releases/test/index.html
 
 # create symbolic link
-ln -sf /data/web_static/releases/test /data/web_static/current/
+if [ -d "/data/web_static/releases/test/" ]; then
+  sudo ln -sf /data/web_static/releases/test /data/web_static/current/
+ else
+	 exit 1
+fi
 
 # owerniship to ubuntu
 sudo chown -R ubuntu:ubuntu /data/
