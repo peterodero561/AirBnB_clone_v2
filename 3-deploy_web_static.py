@@ -49,11 +49,13 @@ def do_deploy(archive_path):
         # Upload the archive to /tmp/ directory of the web server
         put(archive_path, '/tmp/')
 
-        # Extract the archive to the folder /data/web_static/releases/<archive filename without extension>
+        # Extract the archive to the folder
+        # /data/web_static/releases/<archive filename without extension>
         filename = archive_path.split('/')[-1]
         folder_name = '/data/web_static/releases/{}'.format(filename[:-4])
         run('mkdir -p {}'.format(folder_name))
-        run('tar -xzf /tmp/{} -C {} --strip-components=1'.format(filename, folder_name))
+        run('tar -xzf /tmp/{} -C {} --strip-components=1'.format(
+            filename, folder_name))
 
         # Delete the archive from the web server
         run('rm /tmp/{}'.format(filename))
