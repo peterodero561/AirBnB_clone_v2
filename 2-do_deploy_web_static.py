@@ -7,7 +7,7 @@ from os.path import exists
 
 
 # Define the list of web servers
-env.hosts = ['54.175.255.107', '3.85.168.57']
+env.hosts = ['54.162.83.217', '3.85.168.57']
 env.user = 'ubuntu'
 def do_deploy(archive_path):
     """
