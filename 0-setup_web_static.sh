@@ -32,3 +32,9 @@ sudo sed -i "/server_name peterdev.tech;/a \ \n\tlocation /hbnb_static {\n\t\tal
 
 # Restart Nginx
 sudo systemctl restart nginx
+exit_status=$?
+if [ $exit_status -eq 0 ]; then
+    echo "Command executed successfully."
+else
+    echo "Command failed with exit status $exit_status."
+fi
