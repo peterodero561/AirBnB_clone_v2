@@ -3,15 +3,17 @@
 
 from fabric.api import run, put, env
 import os
+from os.path import exists
+
 
 # Define the list of web servers
 env.hosts = ['54.175.255.107', '3.85.168.57']
-
+env.user = 'ubuntu'
 def do_deploy(archive_path):
     """
     Distributes an archive to web servers and deploys it.
     """
-    if not os.path.exists(archive_path):
+    if not exists(archive_path):
         print("Error: Archive file does not exist.")
         return False
 
